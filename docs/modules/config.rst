@@ -1,7 +1,7 @@
-detectron2.config package
+mydl.config package
 =========================
 
-.. automodule:: detectron2.config
+.. automodule:: mydl.config
     :members:
     :undoc-members:
     :show-inheritance:
@@ -11,7 +11,7 @@ detectron2.config package
 Config References
 -----------------
 
-.. literalinclude:: ../../detectron2/config/defaults.py
+.. literalinclude:: ../../mydl/config/defaults.py
   :language: python
   :linenos:
   :lines: 4-

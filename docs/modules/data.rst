@@ -1,40 +1,40 @@
-detectron2.data package
+mydl.data package
 =======================
 
-.. automodule:: detectron2.data
+.. automodule:: mydl.data
     :members:
     :undoc-members:
     :show-inheritance:
 
-detectron2.data.detection\_utils module
+mydl.data.detection\_utils module
 ---------------------------------------
 
-.. automodule:: detectron2.data.detection_utils
+.. automodule:: mydl.data.detection_utils
     :members:
     :undoc-members:
     :show-inheritance:
 
-detectron2.data.datasets module
+mydl.data.datasets module
 ---------------------------------------
 
-.. automodule:: detectron2.data.datasets
+.. automodule:: mydl.data.datasets
     :members:
     :undoc-members:
     :show-inheritance:
 
-detectron2.data.samplers module
+mydl.data.samplers module
 ---------------------------------------
 
-.. automodule:: detectron2.data.samplers
+.. automodule:: mydl.data.samplers
     :members:
     :undoc-members:
     :show-inheritance:
 
 
-detectron2.data.transforms module
+mydl.data.transforms module
 ---------------------------------------
 
-.. automodule:: detectron2.data.transforms
+.. automodule:: mydl.data.transforms
     :members:
     :undoc-members:
     :show-inheritance:

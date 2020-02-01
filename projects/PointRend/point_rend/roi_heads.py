@@ -4,14 +4,14 @@
 import numpy as np
 import torch
 
-from detectron2.layers import ShapeSpec, cat, interpolate
-from detectron2.modeling import ROI_HEADS_REGISTRY, StandardROIHeads
-from detectron2.modeling.roi_heads.mask_head import (
+from mydl.layers import ShapeSpec, cat, interpolate
+from mydl.modeling import ROI_HEADS_REGISTRY, StandardROIHeads
+from mydl.modeling.roi_heads.mask_head import (
     build_mask_head,
     mask_rcnn_inference,
     mask_rcnn_loss,
 )
-from detectron2.modeling.roi_heads.roi_heads import select_foreground_proposals
+from mydl.modeling.roi_heads.roi_heads import select_foreground_proposals
 
 from .point_features import (
     generate_regular_grid_point_coords,

@@ -9,14 +9,14 @@ the following extra functionalities:
    We provided several base configs for standard model architectures.
 2. We provide config versioning, for backward compatibility.
    If your config file is versioned with a config line like `VERSION: 2`,
-   detectron2 will still recognize it even if we rename some keys in the future.
+   mydl will still recognize it even if we rename some keys in the future.
 
 ### Use Configs
 
 Some basic usage of the `CfgNode` object is shown below:
 ```python
-from detectron2.config import get_cfg
-cfg = get_cfg()    # obtain detectron2's default config
+from mydl.config import get_cfg
+cfg = get_cfg()    # obtain mydl's default config
 cfg.xxx = yyy      # add new configs for your own custom components
 cfg.merge_from_file("my_cfg.yaml")   # load values from a file
 
@@ -24,7 +24,7 @@ cfg.merge_from_list(["MODEL.WEIGHTS", "weights.pth"])   # can also load values f
 print(cfg.dump())  # print formatted configs
 ```
 
-To see a list of available configs in detectron2, see [Config References](../modules/config.html#config-references)
+To see a list of available configs in mydl, see [Config References](../modules/config.html#config-references)
 
 
 ### Best Practice with Configs

@@ -1,7 +1,7 @@
-detectron2.evaluation package
+mydl.evaluation package
 =============================
 
-.. automodule:: detectron2.evaluation
+.. automodule:: mydl.evaluation
     :members:
     :undoc-members:
     :show-inheritance:

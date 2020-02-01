@@ -9,7 +9,7 @@ import numpy as np
 import os
 from PIL import Image
 
-from detectron2.data.datasets.builtin_meta import COCO_CATEGORIES
+from mydl.data.datasets.builtin_meta import COCO_CATEGORIES
 from fvcore.common.download import download
 
 from panopticapi.utils import rgb2id
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     # Prepare val2017_100 for quick testing:
 
     dest_dir = os.path.join(dataset_dir, "annotations/")
-    URL_PREFIX = "https://dl.fbaipublicfiles.com/detectron2/"
+    URL_PREFIX = "https://dl.fbaipublicfiles.com/mydl/"
     download(URL_PREFIX + "annotations/coco/panoptic_val2017_100.json", dest_dir)
     with open(os.path.join(dest_dir, "panoptic_val2017_100.json")) as f:
         obj = json.load(f)

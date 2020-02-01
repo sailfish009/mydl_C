@@ -1,7 +1,7 @@
-detectron2.model_zoo package
+mydl.model_zoo package
 ============================
 
-.. automodule:: detectron2.model_zoo
+.. automodule:: mydl.model_zoo
     :members:
     :undoc-members:
     :show-inheritance:

@@ -5,9 +5,9 @@ import numpy as np
 import unittest
 import pycocotools.mask as mask_util
 
-from detectron2.data import detection_utils
-from detectron2.data import transforms as T
-from detectron2.structures import BitMasks, BoxMode
+from mydl.data import detection_utils
+from mydl.data import transforms as T
+from mydl.structures import BitMasks, BoxMode
 
 
 class TestTransformAnnotations(unittest.TestCase):

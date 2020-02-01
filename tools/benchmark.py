@@ -13,21 +13,21 @@ import tqdm
 from fvcore.common.timer import Timer
 from torch.nn.parallel import DistributedDataParallel
 
-from detectron2.checkpoint import DetectionCheckpointer
-from detectron2.config import get_cfg
-from detectron2.data import (
+from mydl.checkpoint import DetectionCheckpointer
+from mydl.config import get_cfg
+from mydl.data import (
     DatasetFromList,
     build_detection_test_loader,
     build_detection_train_loader,
 )
-from detectron2.engine import SimpleTrainer, default_argument_parser, hooks, launch
-from detectron2.modeling import build_model
-from detectron2.solver import build_optimizer
-from detectron2.utils import comm
-from detectron2.utils.events import CommonMetricPrinter
-from detectron2.utils.logger import setup_logger
+from mydl.engine import SimpleTrainer, default_argument_parser, hooks, launch
+from mydl.modeling import build_model
+from mydl.solver import build_optimizer
+from mydl.utils import comm
+from mydl.utils.events import CommonMetricPrinter
+from mydl.utils.logger import setup_logger
 
-logger = logging.getLogger("detectron2")
+logger = logging.getLogger("mydl")
 
 
 def setup(args):

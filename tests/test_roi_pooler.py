@@ -3,8 +3,8 @@ import logging
 import unittest
 import torch
 
-from detectron2.modeling.poolers import ROIPooler
-from detectron2.structures import Boxes, RotatedBoxes
+from mydl.modeling.poolers import ROIPooler
+from mydl.structures import Boxes, RotatedBoxes
 
 logger = logging.getLogger(__name__)
 

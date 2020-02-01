@@ -4,7 +4,7 @@
 Evaluation is a process that takes a number of inputs/outputs pairs and aggregate them.
 You can always [use the model](models.html) directly and just parse its inputs/outputs manually to perform
 evaluation.
-Alternatively, evaluation is implemented in detectron2 using the [DatasetEvaluator](../modules/evaluation.html#detectron2.evaluation.DatasetEvaluator)
+Alternatively, evaluation is implemented in mydl using the [DatasetEvaluator](../modules/evaluation.html#mydl.evaluation.DatasetEvaluator)
 interface.
 
 Detectron2 includes a few `DatasetEvaluator` that computes metrics using standard dataset-specific
@@ -26,7 +26,7 @@ class Counter(DatasetEvaluator):
 ```
 
 Once you have some `DatasetEvaluator`, you can run it with
-[inference_on_dataset](../modules/evaluation.html#detectron2.evaluation.inference_on_dataset).
+[inference_on_dataset](../modules/evaluation.html#mydl.evaluation.inference_on_dataset).
 For example,
 
 ```python
@@ -36,7 +36,7 @@ val_results = inference_on_dataset(
     DatasetEvaluators([COCOEvaluator(...), Counter()]))
 ```
 Compared to running the evaluation manually using the model, the benefit of this function is that
-you can merge evaluators together using [DatasetEvaluators](../modules/evaluation.html#detectron2.evaluation.DatasetEvaluators).
+you can merge evaluators together using [DatasetEvaluators](../modules/evaluation.html#mydl.evaluation.DatasetEvaluators).
 In this way you can run all evaluations without having to go through the dataset multiple times.
 
 The `inference_on_dataset` function also provides accurate speed benchmarks for the

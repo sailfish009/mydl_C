@@ -1,14 +1,14 @@
 # Write Models
 
 If you are trying to do something completely new, you may wish to implement
-a model entirely from scratch within detectron2. However, in many situations you may
+a model entirely from scratch within mydl. However, in many situations you may
 be interested in modifying or extending some components of an existing model.
 Therefore, we also provide a registration mechanism that lets you override the
 behavior of certain internal components of standard models.
 
 For example, to add a new backbone, import this code in your code:
 ```python
-from detectron2.modeling import BACKBONE_REGISTRY, Backbone, ShapeSpec
+from mydl.modeling import BACKBONE_REGISTRY, Backbone, ShapeSpec
 
 @BACKBONE_REGISTRY.register()
 class ToyBackBone(Backbone):
@@ -27,8 +27,8 @@ Then, you can use `cfg.MODEL.BACKBONE.NAME = 'ToyBackBone'` in your config objec
 
 As another example, to add new abilities to the ROI heads in the Generalized R-CNN meta-architecture,
 you can implement a new
-[ROIHeads](../modules/modeling.html#detectron2.modeling.ROIHeads) subclass and put it in the `ROI_HEADS_REGISTRY`.
-See [densepose in detectron2](../../projects/DensePose)
+[ROIHeads](../modules/modeling.html#mydl.modeling.ROIHeads) subclass and put it in the `ROI_HEADS_REGISTRY`.
+See [densepose in mydl](../../projects/DensePose)
 for an example that implements new ROIHeads.
 And [projects/](../../projects/)
 contains examples that implement a few different architectures.

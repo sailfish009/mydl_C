@@ -3,9 +3,9 @@
 
 import torch
 
-from detectron2.modeling import ROI_HEADS_REGISTRY, StandardROIHeads
-from detectron2.modeling.poolers import ROIPooler
-from detectron2.modeling.roi_heads import select_foreground_proposals
+from mydl.modeling import ROI_HEADS_REGISTRY, StandardROIHeads
+from mydl.modeling.poolers import ROIPooler
+from mydl.modeling.roi_heads import select_foreground_proposals
 
 from .densepose_head import (
     build_densepose_data_filter,

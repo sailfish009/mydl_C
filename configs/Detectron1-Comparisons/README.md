@@ -42,7 +42,7 @@ This provides a fair comparison of accuracy and speed against Detectron.
 <td align="center"></td>
 <td align="center"></td>
 <td align="center">137781054</td>
-<td align="center"><a href="https://dl.fbaipublicfiles.com/detectron2/Detectron1-Comparisons/faster_rcnn_R_50_FPN_noaug_1x/137781054/model_final_7ab50c.pkl">model</a>&nbsp;|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/Detectron1-Comparisons/faster_rcnn_R_50_FPN_noaug_1x/137781054/metrics.json">metrics</a></td>
+<td align="center"><a href="https://dl.fbaipublicfiles.com/mydl/Detectron1-Comparisons/faster_rcnn_R_50_FPN_noaug_1x/137781054/model_final_7ab50c.pkl">model</a>&nbsp;|&nbsp;<a href="https://dl.fbaipublicfiles.com/mydl/Detectron1-Comparisons/faster_rcnn_R_50_FPN_noaug_1x/137781054/metrics.json">metrics</a></td>
 </tr>
 <!-- ROW: keypoint_rcnn_R_50_FPN_1x -->
  <tr><td align="left"><a href="configs/Detectron1-Comparisons/keypoint_rcnn_R_50_FPN_1x.yaml">Keypoint R-CNN</a></td>
@@ -54,7 +54,7 @@ This provides a fair comparison of accuracy and speed against Detectron.
 <td align="center"></td>
 <td align="center">64.2</td>
 <td align="center">137781195</td>
-<td align="center"><a href="https://dl.fbaipublicfiles.com/detectron2/Detectron1-Comparisons/keypoint_rcnn_R_50_FPN_1x/137781195/model_final_cce136.pkl">model</a>&nbsp;|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/Detectron1-Comparisons/keypoint_rcnn_R_50_FPN_1x/137781195/metrics.json">metrics</a></td>
+<td align="center"><a href="https://dl.fbaipublicfiles.com/mydl/Detectron1-Comparisons/keypoint_rcnn_R_50_FPN_1x/137781195/model_final_cce136.pkl">model</a>&nbsp;|&nbsp;<a href="https://dl.fbaipublicfiles.com/mydl/Detectron1-Comparisons/keypoint_rcnn_R_50_FPN_1x/137781195/metrics.json">metrics</a></td>
 </tr>
 <!-- ROW: mask_rcnn_R_50_FPN_noaug_1x -->
  <tr><td align="left"><a href="configs/Detectron1-Comparisons/mask_rcnn_R_50_FPN_noaug_1x.yaml">Mask R-CNN</a></td>
@@ -66,7 +66,7 @@ This provides a fair comparison of accuracy and speed against Detectron.
 <td align="center">34.9</td>
 <td align="center"></td>
 <td align="center">137781281</td>
-<td align="center"><a href="https://dl.fbaipublicfiles.com/detectron2/Detectron1-Comparisons/mask_rcnn_R_50_FPN_noaug_1x/137781281/model_final_62ca52.pkl">model</a>&nbsp;|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/Detectron1-Comparisons/mask_rcnn_R_50_FPN_noaug_1x/137781281/metrics.json">metrics</a></td>
+<td align="center"><a href="https://dl.fbaipublicfiles.com/mydl/Detectron1-Comparisons/mask_rcnn_R_50_FPN_noaug_1x/137781281/model_final_62ca52.pkl">model</a>&nbsp;|&nbsp;<a href="https://dl.fbaipublicfiles.com/mydl/Detectron1-Comparisons/mask_rcnn_R_50_FPN_noaug_1x/137781281/metrics.json">metrics</a></td>
 </tr>
 </tbody></table>
 
@@ -78,4 +78,4 @@ This provides a fair comparison of accuracy and speed against Detectron.
 	compensated back by some parameter tuning.
 * Mask R-CNN: Detectron's AP is box 37.7, mask 33.9. We're 1 AP better in mask AP, due to more correct implementation.
 
-For speed comparison, see [benchmarks](https://detectron2.readthedocs.io/notes/benchmarks.html).
+For speed comparison, see [benchmarks](https://mydl.readthedocs.io/notes/benchmarks.html).

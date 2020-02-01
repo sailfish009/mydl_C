@@ -6,7 +6,7 @@ import os
 import tempfile
 import unittest
 
-from detectron2.config import downgrade_config, get_cfg, upgrade_config
+from mydl.config import downgrade_config, get_cfg, upgrade_config
 
 _V0_CFG = """
 MODEL:

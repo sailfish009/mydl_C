@@ -63,7 +63,7 @@ for m in [
     "cv2",
     "scipy",
     "portalocker",
-    "detectron2._C",
+    "mydl._C",
     "pycocotools",
     "pycocotools.mask",
     "pycocotools.coco",
@@ -82,15 +82,15 @@ for m in [
     sys.modules[m] = mock.Mock(name=m)
 sys.modules["cv2"].__version__ = "3.4"
 
-import detectron2  # isort: skip
+import mydl  # isort: skip
 
 
-project = "detectron2"
-copyright = "2019, detectron2 contributors"
-author = "detectron2 contributors"
+project = "mydl"
+copyright = "2019, mydl contributors"
+author = "mydl contributors"
 
 # The short X.Y version
-version = detectron2.__version__
+version = mydl.__version__
 # The full version, including alpha/beta/rc tags
 release = version
 
@@ -193,7 +193,7 @@ html_static_path = ["_static"]
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "detectron2doc"
+htmlhelp_basename = "mydldoc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -217,7 +217,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "detectron2.tex", "detectron2 Documentation", "detectron2 contributors", "manual")
+    (master_doc, "mydl.tex", "mydl Documentation", "mydl contributors", "manual")
 ]
 
 
@@ -225,7 +225,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "detectron2", "detectron2 Documentation", [author], 1)]
+man_pages = [(master_doc, "mydl", "mydl Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -236,10 +236,10 @@ man_pages = [(master_doc, "detectron2", "detectron2 Documentation", [author], 1)
 texinfo_documents = [
     (
         master_doc,
-        "detectron2",
-        "detectron2 Documentation",
+        "mydl",
+        "mydl Documentation",
         author,
-        "detectron2",
+        "mydl",
         "One line description of project.",
         "Miscellaneous",
     )
@@ -268,10 +268,10 @@ def autodoc_skip_member(app, what, name, obj, skip, options):
 def url_resolver(url):
     if ".html" not in url:
         url = url.replace("../", "")
-        return "https://github.com/facebookresearch/detectron2/blob/master/" + url
+        return "https://github.com/facebookresearch/mydl/blob/master/" + url
     else:
         if DEPLOY:
-            return "http://detectron2.readthedocs.io/" + url
+            return "http://mydl.readthedocs.io/" + url
         else:
             return "/" + url
 

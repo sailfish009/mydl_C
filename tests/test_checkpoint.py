@@ -4,8 +4,8 @@ from collections import OrderedDict
 import torch
 from torch import nn
 
-from detectron2.checkpoint.c2_model_loading import align_and_update_state_dicts
-from detectron2.utils.logger import setup_logger
+from mydl.checkpoint.c2_model_loading import align_and_update_state_dicts
+from mydl.utils.logger import setup_logger
 
 
 class TestCheckpointer(unittest.TestCase):

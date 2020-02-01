@@ -1,7 +1,7 @@
-detectron2.structures package
+mydl.structures package
 =============================
 
-.. automodule:: detectron2.structures
+.. automodule:: mydl.structures
     :members:
     :undoc-members:
     :show-inheritance:

@@ -15,10 +15,10 @@ and it originates from [maskrcnn-benchmark](https://github.com/facebookresearch/
 * Includes more features such as panoptic segmentation, densepose, Cascade R-CNN, rotated bounding boxes, etc.
 * Can be used as a library to support [different projects](projects/) on top of it.
   We'll open source more research projects in this way.
-* It [trains much faster](https://detectron2.readthedocs.io/notes/benchmarks.html).
+* It [trains much faster](https://mydl.readthedocs.io/notes/benchmarks.html).
 
-See our [blog post](https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/)
-to see more demos and learn about detectron2.
+See our [blog post](https://ai.facebook.com/blog/-mydl-a-pytorch-based-modular-object-detection-library-/)
+to see more demos and learn about mydl.
 
 ## Installation
 
@@ -29,8 +29,8 @@ See [INSTALL.md](INSTALL.md).
 See [GETTING_STARTED.md](GETTING_STARTED.md),
 or the [Colab Notebook](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5).
 
-Learn more at our [documentation](https://detectron2.readthedocs.org).
-And see [projects/](projects/) for some projects that are built on top of detectron2.
+Learn more at our [documentation](https://mydl.readthedocs.org).
+And see [projects/](projects/) for some projects that are built on top of mydl.
 
 ## Model Zoo and Baselines
 
@@ -46,11 +46,11 @@ Detectron2 is released under the [Apache 2.0 license](LICENSE).
 If you use Detectron2 in your research or wish to refer to the baseline results published in the [Model Zoo](MODEL_ZOO.md), please use the following BibTeX entry.
 
 ```BibTeX
-@misc{wu2019detectron2,
+@misc{wu2019mydl,
   author =       {Yuxin Wu and Alexander Kirillov and Francisco Massa and
                   Wan-Yen Lo and Ross Girshick},
   title =        {Detectron2},
-  howpublished = {\url{https://github.com/facebookresearch/detectron2}},
+  howpublished = {\url{https://github.com/facebookresearch/mydl}},
   year =         {2019}
 }
 ```

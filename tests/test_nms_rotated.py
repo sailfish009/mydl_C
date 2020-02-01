@@ -4,7 +4,7 @@ import unittest
 import torch
 from torchvision import ops
 
-from detectron2.layers import batched_nms, batched_nms_rotated, nms_rotated
+from mydl.layers import batched_nms, batched_nms_rotated, nms_rotated
 
 
 class TestNMSRotated(unittest.TestCase):

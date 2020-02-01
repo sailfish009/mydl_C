@@ -3,7 +3,7 @@
 
 ### Notable Changes:
 
-* 2019-11-11: `detectron2.data.detection_utils.read_image` transposes images with exif information.
+* 2019-11-11: `mydl.data.detection_utils.read_image` transposes images with exif information.
 * 2019-10-10: initial release.
 
 ### Config Version Change Log

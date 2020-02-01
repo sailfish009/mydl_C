@@ -12,7 +12,7 @@ which is a challenge for any research engineering project of a significant size:
    abstractions, so that users can easily do things in standard ways,
    without worrying too much about the details that only certain researchers care about.
 
-In detectron2, there are two types of interfaces that address this tension together:
+In mydl, there are two types of interfaces that address this tension together:
 
 1. Functions and classes that take only a "config" argument (optionally with a minimal
    set of extra arguments in cases of mature interfaces).
@@ -28,11 +28,11 @@ In detectron2, there are two types of interfaces that address this tension toget
    Each of these is a small building block of the entire system.
    They require users' effort to stitch together, but can be stitched together in more flexible ways.
    When you need to implement something different from the "standard defaults"
-   included in detectron2, these well-defined components can be reused.
+   included in mydl, these well-defined components can be reused.
 
 
 If you only need the standard behavior, the [Beginner's Tutorial](getting_started.html)
-should suffice. If you need to extend detectron2 to your own needs,
+should suffice. If you need to extend mydl to your own needs,
 see the following tutorials for more details:
 
 * Detectron2 includes a few standard datasets, but you can use custom ones. See

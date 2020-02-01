@@ -1,7 +1,7 @@
-detectron2.solver package
+mydl.solver package
 =========================
 
-.. automodule:: detectron2.solver
+.. automodule:: mydl.solver
     :members:
     :undoc-members:
     :show-inheritance:

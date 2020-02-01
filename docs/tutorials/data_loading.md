@@ -7,7 +7,7 @@ Detectron2 contains a builtin data loading pipeline.
 It's good to understand how it works, in case you need to write a custom one.
 
 Detectron2 provides two functions
-[build_detection_{train,test}_loader](../modules/data.html#detectron2.data.build_detection_train_loader)
+[build_detection_{train,test}_loader](../modules/data.html#mydl.data.build_detection_train_loader)
 that create a default data loader from a given config.
 Here is how `build_detection_{train,test}_loader` work:
 
@@ -18,10 +18,10 @@ Here is how `build_detection_{train,test}_loader` work:
    [datasets](datasets.html).
 2. Each dict in this list is mapped by a function ("mapper"):
    * Users can customize this mapping function by specifying the "mapper" argument in
-        `build_detection_{train,test}_loader`. The default mapper is [DatasetMapper]( ../modules/data.html#detectron2.data.DatasetMapper).
+        `build_detection_{train,test}_loader`. The default mapper is [DatasetMapper]( ../modules/data.html#mydl.data.DatasetMapper).
    * The output format of such function can be arbitrary, as long as it is accepted by the consumer of this data loader (usually the model).
      The outputs of the default mapper, after batching, follow the default model input format documented in
-     [Use Models](https://detectron2.readthedocs.io/tutorials/models.html#model-input-format).
+     [Use Models](https://mydl.readthedocs.io/tutorials/models.html#model-input-format).
    * The role of the mapper is to transform the lightweight, canonical representation of a dataset item into a format
      that is ready for the model to consume (including, e.g., read images, perform random data augmentation and convert to torch Tensors).
      If you would like to perform custom transformations to data, you often want a custom mapper.
@@ -37,9 +37,9 @@ of custom data loading.
 For example, if you want to resize all images to a fixed size for Mask R-CNN training, write this:
 
 ```python
-from detectron2.data import build_detection_train_loader
-from detectron2.data import transforms as T
-from detectron2.data import detection_utils as utils
+from mydl.data import build_detection_train_loader
+from mydl.data import transforms as T
+from mydl.data import detection_utils as utils
 
 def mapper(dataset_dict):
 	# Implement a mapper, similar to the default DatasetMapper, but with your own customizations
@@ -60,7 +60,7 @@ def mapper(dataset_dict):
 data_loader = build_detection_train_loader(cfg, mapper=mapper)
 # use this dataloader instead of the default
 ```
-Refer to [API documentation of detectron2.data](../modules/data.html) for details.
+Refer to [API documentation of mydl.data](../modules/data.html) for details.
 
 If you want to change not only the mapper (e.g., to write different sampling or batching logic),
 you can write your own data loader. The data loader is simply a
@@ -69,7 +69,7 @@ You can implement it using any tools you like.
 
 ## Use a Custom Dataloader
 
-If you use [DefaultTrainer](../modules/engine.html#detectron2.engine.defaults.DefaultTrainer),
+If you use [DefaultTrainer](../modules/engine.html#mydl.engine.defaults.DefaultTrainer),
 you can overwrite its `build_{train,test}__loader` method to use your own dataloader.
 See the [densepose dataloader](../../projects/DensePose/train_net.py)
 for an example.

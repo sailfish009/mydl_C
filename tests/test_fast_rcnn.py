@@ -3,12 +3,12 @@ import logging
 import unittest
 import torch
 
-from detectron2.config import get_cfg
-from detectron2.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
-from detectron2.modeling.roi_heads.fast_rcnn import FastRCNNOutputLayers, FastRCNNOutputs
-from detectron2.modeling.roi_heads.rotated_fast_rcnn import RotatedFastRCNNOutputs
-from detectron2.structures import Boxes, Instances, RotatedBoxes
-from detectron2.utils.events import EventStorage
+from mydl.config import get_cfg
+from mydl.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
+from mydl.modeling.roi_heads.fast_rcnn import FastRCNNOutputLayers, FastRCNNOutputs
+from mydl.modeling.roi_heads.rotated_fast_rcnn import RotatedFastRCNNOutputs
+from mydl.structures import Boxes, Instances, RotatedBoxes
+from mydl.utils.events import EventStorage
 
 logger = logging.getLogger(__name__)
 

@@ -1,7 +1,7 @@
-detectron2.export package
+mydl.export package
 =========================
 
-.. automodule:: detectron2.export
+.. automodule:: mydl.export
     :members:
     :undoc-members:
     :show-inheritance:

@@ -5,16 +5,16 @@ import copy
 import torch
 from fvcore.common.file_io import PathManager
 
-from detectron2.data import MetadataCatalog
-from detectron2.data import detection_utils as utils
-from detectron2.data import transforms as T
+from mydl.data import MetadataCatalog
+from mydl.data import detection_utils as utils
+from mydl.data import transforms as T
 
 from .structures import DensePoseDataRelative, DensePoseList, DensePoseTransformData
 
 
 class DatasetMapper:
     """
-    A customized version of `detectron2.data.DatasetMapper`
+    A customized version of `mydl.data.DatasetMapper`
     """
 
     def __init__(self, cfg, is_train=True):
@@ -57,7 +57,7 @@ class DatasetMapper:
             dataset_dict (dict): Metadata of one image, in Detectron2 Dataset format.
 
         Returns:
-            dict: a format that builtin models in detectron2 accept
+            dict: a format that builtin models in mydl accept
         """
         dataset_dict = copy.deepcopy(dataset_dict)  # it will be modified by code below
         image = utils.read_image(dataset_dict["file_name"], format=self.img_format)

@@ -1,70 +1,70 @@
-detectron2.utils package
+mydl.utils package
 ========================
 
-detectron2.utils.colormap module
+mydl.utils.colormap module
 --------------------------------
 
-.. automodule:: detectron2.utils.colormap
+.. automodule:: mydl.utils.colormap
     :members:
     :undoc-members:
     :show-inheritance:
 
-detectron2.utils.comm module
+mydl.utils.comm module
 ----------------------------
 
-.. automodule:: detectron2.utils.comm
+.. automodule:: mydl.utils.comm
     :members:
     :undoc-members:
     :show-inheritance:
 
 
-detectron2.utils.events module
+mydl.utils.events module
 ------------------------------
 
-.. automodule:: detectron2.utils.events
+.. automodule:: mydl.utils.events
     :members:
     :undoc-members:
     :show-inheritance:
 
 
-detectron2.utils.logger module
+mydl.utils.logger module
 ------------------------------
 
-.. automodule:: detectron2.utils.logger
+.. automodule:: mydl.utils.logger
     :members:
     :undoc-members:
     :show-inheritance:
 
 
-detectron2.utils.registry module
+mydl.utils.registry module
 --------------------------------
 
-.. automodule:: detectron2.utils.registry
+.. automodule:: mydl.utils.registry
     :members:
     :undoc-members:
     :show-inheritance:
 
-detectron2.utils.memory module
+mydl.utils.memory module
 ----------------------------------
 
-.. automodule:: detectron2.utils.memory
+.. automodule:: mydl.utils.memory
     :members:
     :undoc-members:
     :show-inheritance:
 
 
-detectron2.utils.video\_visualizer module
+mydl.utils.video\_visualizer module
 -----------------------------------------
 
-.. automodule:: detectron2.utils.video_visualizer
+.. automodule:: mydl.utils.video_visualizer
     :members:
     :undoc-members:
     :show-inheritance:
 
-detectron2.utils.visualizer module
+mydl.utils.visualizer module
 ----------------------------------
 
-.. automodule:: detectron2.utils.visualizer
+.. automodule:: mydl.utils.visualizer
     :members:
     :undoc-members:
     :show-inheritance:

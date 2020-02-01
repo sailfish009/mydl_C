@@ -1,8 +1,8 @@
 # Deployment
 
 ## Caffe2 Deployment
-We currently support converting a detectron2 model to Caffe2 format through ONNX.
-The converted Caffe2 model is able to run without detectron2 dependency in either Python or C++.
+We currently support converting a mydl model to Caffe2 format through ONNX.
+The converted Caffe2 model is able to run without mydl dependency in either Python or C++.
 It has a runtime optimized for CPU & mobile inference, but not for GPU inference.
 
 Caffe2 conversion requires PyTorch ≥ 1.4 and ONNX ≥ 1.6.
@@ -27,7 +27,7 @@ To convert an official Mask R-CNN trained on COCO, first
 ```
 python tools/caffe2_converter.py --config-file configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml \
 	--output ./caffe2_model --run-eval \
-	MODEL.WEIGHTS detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl \
+	MODEL.WEIGHTS mydl://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl \
 	MODEL.DEVICE cpu
 ```
 
@@ -61,5 +61,5 @@ layers that are not post-processed, because in actual deployment, an application
 its custom lightweight post-processing (e.g. full-image masks for every detected object is often not necessary).
 
 Due to different inputs & outputs formats, the `Caffe2Model.__call__` method includes
-pre/post-processing code in order to match the formats of original detectron2 models.
+pre/post-processing code in order to match the formats of original mydl models.
 They can serve as a reference for pre/post-processing in actual deployment.

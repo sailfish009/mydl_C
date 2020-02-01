@@ -1,11 +1,11 @@
-# Contributing to detectron2
+# Contributing to mydl
 We want to make contributing to this project as easy and transparent as
 possible.
 
 ## Issues
 We use GitHub issues to track public bugs and questions.
 Please make sure to follow one of the
-[issue templates](https://github.com/facebookresearch/detectron2/issues/new/choose)
+[issue templates](https://github.com/facebookresearch/mydl/issues/new/choose)
 when reporting any issues.
 
 Facebook has a [bounty program](https://www.facebook.com/whitehat/) for the safe
@@ -20,9 +20,9 @@ make sure to have a corresponding issue to discuss your motivation and proposals
 before sending a PR. We do not always accept new features, and we take the following
 factors into consideration:
 
-1. Whether the same feature can be achieved without modifying detectron2.
+1. Whether the same feature can be achieved without modifying mydl.
 Detectron2 is designed so that you can implement many extensions from the outside, e.g.
-those in [projects](https://github.com/facebookresearch/detectron2/tree/master/projects).
+those in [projects](https://github.com/facebookresearch/mydl/tree/master/projects).
 If some part is not as extensible, you can also bring up the issue to make it more extensible.
 2. Whether the feature is potentially useful to a large audience, or only to a small portion of users.
 3. Whether the proposed solution has a good design / interface.
@@ -47,5 +47,5 @@ to do this once to work on any of Facebook's open source projects.
 Complete your CLA here: <https://code.facebook.com/cla>
 
 ## License
-By contributing to detectron2, you agree that your contributions will be licensed
+By contributing to mydl, you agree that your contributions will be licensed
 under the LICENSE file in the root directory of this source tree.

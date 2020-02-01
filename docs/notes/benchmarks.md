@@ -1,7 +1,7 @@
 
 # Benchmarks
 
-Here we benchmark the training speed of a Mask R-CNN in detectron2,
+Here we benchmark the training speed of a Mask R-CNN in mydl,
 with some other popular open source Mask R-CNN implementations.
 
 
@@ -47,9 +47,9 @@ with some other popular open source Mask R-CNN implementations.
 .. _Detectron: https://github.com/facebookresearch/Detectron
 __ https://github.com/matterport/Mask_RCNN/
 
-.. |D2| image:: https://github.com/facebookresearch/detectron2/raw/master/.github/Detectron2-Logo-Horz.svg?sanitize=true
+.. |D2| image:: https://github.com/facebookresearch/mydl/raw/master/.github/Detectron2-Logo-Horz.svg?sanitize=true
    :height: 15pt
-   :target: https://github.com/facebookresearch/detectron2/
+   :target: https://github.com/facebookresearch/mydl/
 .. |PT| image:: https://pytorch.org/assets/images/logo-icon.svg
    :width: 15pt
    :height: 15pt

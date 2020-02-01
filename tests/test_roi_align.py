@@ -4,7 +4,7 @@ import unittest
 import cv2
 import torch
 
-from detectron2.layers.roi_align import ROIAlign
+from mydl.layers.roi_align import ROIAlign
 
 
 class ROIAlignTest(unittest.TestCase):

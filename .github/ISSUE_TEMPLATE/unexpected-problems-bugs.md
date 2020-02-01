@@ -1,6 +1,6 @@
 ---
 name: "Unexpected behaviors / Bugs"
-about: Report unexpected behaviors or bugs in detectron2
+about: Report unexpected behaviors or bugs in mydl
 title: Please read & provide the following
 
 ---
@@ -30,14 +30,14 @@ please tell us the expected behavior.
 If you expect the model to converge / work better, note that we do not give suggestions
 on how to train a new model.
 Only in one of the two conditions we will help with it:
-(1) You're unable to reproduce the results in detectron2 model zoo.
-(2) It indicates a detectron2 bug.
+(1) You're unable to reproduce the results in mydl model zoo.
+(2) It indicates a mydl bug.
 
 ## Environment:
 
-Run `python -m detectron2.utils.collect_env` in the environment where you observerd the issue, and paste the output.
-If detectron2 hasn't been successfully installed, use `python detectron2/utils/collect_env.py`.
+Run `python -m mydl.utils.collect_env` in the environment where you observerd the issue, and paste the output.
+If mydl hasn't been successfully installed, use `python mydl/utils/collect_env.py`.
 
 If your issue looks like an installation issue / environment issue,
 please first try to solve it yourself with the instructions in
-https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md#common-installation-issues
+https://github.com/facebookresearch/mydl/blob/master/INSTALL.md#common-installation-issues

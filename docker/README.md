@@ -2,16 +2,16 @@
 Change to the *docker* directory of this repository:
 ```
 cd docker
-USER_ID=$UID docker-compose run detectron2
+USER_ID=$UID docker-compose run mydl
 ```
 
 #### Using a persistent cache directory
 Prevents models to be re-downloaded on every run, by storing them in a cache directory.
 
-`docker-compose run --volume=/path/to/cache:/tmp:rw detectron2`
+`docker-compose run --volume=/path/to/cache:/tmp:rw mydl`
 
 ## Rebuild the container
-Rebuild the container  by `USER_ID=$UID docker-compose build detectron2`.
+Rebuild the container  by `USER_ID=$UID docker-compose build mydl`.
 This is only necessary when `Dockerfile` has been changed. The initial build is done automatically.
 
 ## Install new dependencies

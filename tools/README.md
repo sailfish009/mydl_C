@@ -1,10 +1,10 @@
 
-This directory contains a few scripts that use detectron2.
+This directory contains a few scripts that use mydl.
 
 
 * `train_net.py`
 
-An example training script that's made to train builtin models of detectron2.
+An example training script that's made to train builtin models of mydl.
 
 For usage, see [GETTING_STARTED.md](../GETTING_STARTED.md).
 

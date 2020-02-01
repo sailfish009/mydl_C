@@ -144,7 +144,7 @@ class DensePoseDataRelative(object):
         self._transform_segm(transforms, densepose_transform_data)
 
     def _transform_pts(self, transforms, dp_transform_data):
-        import detectron2.data.transforms as T
+        import mydl.data.transforms as T
 
         # NOTE: This assumes that HorizFlipTransform is the only one that does flip
         do_hflip = sum(isinstance(t, T.HFlipTransform) for t in transforms.transforms) % 2 == 1
@@ -167,7 +167,7 @@ class DensePoseDataRelative(object):
                 self.v[annot_indices_i] = uv_symmetries["V_transforms"][i][v_loc, u_loc]
 
     def _transform_segm(self, transforms, dp_transform_data):
-        import detectron2.data.transforms as T
+        import mydl.data.transforms as T
 
         # NOTE: This assumes that HorizFlipTransform is the only one that does flip
         do_hflip = sum(isinstance(t, T.HFlipTransform) for t in transforms.transforms) % 2 == 1

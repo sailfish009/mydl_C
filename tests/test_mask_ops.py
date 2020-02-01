@@ -14,15 +14,15 @@ from pycocotools.coco import COCO
 from tabulate import tabulate
 from torch.nn import functional as F
 
-from detectron2.data import MetadataCatalog
-from detectron2.layers.mask_ops import (
+from mydl.data import MetadataCatalog
+from mydl.layers.mask_ops import (
     pad_masks,
     paste_mask_in_image_old,
     paste_masks_in_image,
     scale_boxes,
 )
-from detectron2.structures import BitMasks, Boxes, BoxMode, PolygonMasks
-from detectron2.structures.masks import polygons_to_bitmask
+from mydl.structures import BitMasks, Boxes, BoxMode, PolygonMasks
+from mydl.structures.masks import polygons_to_bitmask
 
 
 def iou_between_full_image_bit_masks(a, b):

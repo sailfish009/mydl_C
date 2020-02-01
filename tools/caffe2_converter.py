@@ -2,13 +2,13 @@
 import argparse
 import os
 
-from detectron2.checkpoint import DetectionCheckpointer
-from detectron2.config import get_cfg
-from detectron2.data import build_detection_test_loader
-from detectron2.evaluation import COCOEvaluator, inference_on_dataset, print_csv_format
-from detectron2.export import add_export_config, export_caffe2_model
-from detectron2.modeling import build_model
-from detectron2.utils.logger import setup_logger
+from mydl.checkpoint import DetectionCheckpointer
+from mydl.config import get_cfg
+from mydl.data import build_detection_test_loader
+from mydl.evaluation import COCOEvaluator, inference_on_dataset, print_csv_format
+from mydl.export import add_export_config, export_caffe2_model
+from mydl.modeling import build_model
+from mydl.utils.logger import setup_logger
 
 
 def setup_cfg(args):

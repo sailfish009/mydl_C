@@ -3,9 +3,9 @@ import logging
 import unittest
 import torch
 
-from detectron2.config import get_cfg
-from detectron2.layers import ShapeSpec
-from detectron2.modeling.anchor_generator import DefaultAnchorGenerator, RotatedAnchorGenerator
+from mydl.config import get_cfg
+from mydl.layers import ShapeSpec
+from mydl.modeling.anchor_generator import DefaultAnchorGenerator, RotatedAnchorGenerator
 
 logger = logging.getLogger(__name__)
 

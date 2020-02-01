@@ -6,9 +6,9 @@ import numpy as np
 import unittest
 import torch
 
-from detectron2.data import MetadataCatalog
-from detectron2.structures import BoxMode, Instances, RotatedBoxes
-from detectron2.utils.visualizer import Visualizer
+from mydl.data import MetadataCatalog
+from mydl.structures import BoxMode, Instances, RotatedBoxes
+from mydl.utils.visualizer import Visualizer
 
 
 class TestVisualizer(unittest.TestCase):

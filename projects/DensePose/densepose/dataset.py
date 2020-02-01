@@ -1,8 +1,8 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 import os
 
-from detectron2.data import DatasetCatalog, MetadataCatalog
-from detectron2.data.datasets import load_coco_json
+from mydl.data import DatasetCatalog, MetadataCatalog
+from mydl.data.datasets import load_coco_json
 
 _URL_PREFIX = "https://dl.fbaipublicfiles.com/densepose/data/"
 

@@ -4,7 +4,7 @@ from torch import nn
 from torch.nn import functional as F
 from torch.nn.modules.utils import _pair
 
-from detectron2.layers.wrappers import _NewEmptyTensorOp
+from mydl.layers.wrappers import _NewEmptyTensorOp
 
 
 class TridentConv(nn.Module):

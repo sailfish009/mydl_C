@@ -4,8 +4,8 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from detectron2.layers import Conv2d, ShapeSpec
-from detectron2.modeling import ROI_MASK_HEAD_REGISTRY
+from mydl.layers import Conv2d, ShapeSpec
+from mydl.modeling import ROI_MASK_HEAD_REGISTRY
 
 
 @ROI_MASK_HEAD_REGISTRY.register()

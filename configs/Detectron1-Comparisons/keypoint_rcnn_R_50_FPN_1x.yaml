@@ -1,6 +1,6 @@
 _BASE_: "../Base-RCNN-FPN.yaml"
 MODEL:
-  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  WEIGHTS: "mydl://ImageNetPretrained/MSRA/R-50.pkl"
   KEYPOINT_ON: True
   RESNETS:
     DEPTH: 50
@@ -18,7 +18,7 @@ MODEL:
     POOLER_TYPE: "ROIAlign"
   RPN:
     SMOOTH_L1_BETA: 0.1111
-    # Detectron1 uses 2000 proposals per-batch, but this option is per-image in detectron2
+    # Detectron1 uses 2000 proposals per-batch, but this option is per-image in mydl
     # 1000 proposals per-image is found to hurt box AP.
     # Therefore we increase it to 1500 per-image.
     POST_NMS_TOPK_TRAIN: 1500

@@ -1,7 +1,7 @@
-detectron2.checkpoint package
+mydl.checkpoint package
 =============================
 
-.. automodule:: detectron2.checkpoint
+.. automodule:: mydl.checkpoint
     :members:
     :undoc-members:
     :show-inheritance:

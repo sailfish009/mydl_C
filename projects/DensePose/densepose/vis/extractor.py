@@ -3,8 +3,8 @@ import logging
 from typing import Sequence
 import torch
 
-from detectron2.layers.nms import batched_nms
-from detectron2.structures.instances import Instances
+from mydl.layers.nms import batched_nms
+from mydl.structures.instances import Instances
 
 from densepose.vis.bounding_box import BoundingBoxVisualizer, ScoredBoundingBoxVisualizer
 from densepose.vis.densepose import DensePoseResultsVisualizer

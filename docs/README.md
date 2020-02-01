@@ -1,10 +1,10 @@
 # Read the docs:
 
-The latest documentation built from this directory is available at [detectron2.readthedocs.io](https://detectron2.readthedocs.io/).
+The latest documentation built from this directory is available at [mydl.readthedocs.io](https://mydl.readthedocs.io/).
 
 # Build the docs:
 
-1. Install detectron2 according to [INSTALL.md](INSTALL.md).
+1. Install mydl according to [INSTALL.md](INSTALL.md).
 2. Install additional libraries required to build docs:
   - docutils>=0.14
   - Sphinx>=1.7

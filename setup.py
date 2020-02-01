@@ -15,7 +15,7 @@ assert torch_ver >= [1, 3], "Requires PyTorch >= 1.3"
 
 
 def get_version():
-    init_py_path = path.join(path.abspath(path.dirname(__file__)), "detectron2", "__init__.py")
+    init_py_path = path.join(path.abspath(path.dirname(__file__)), "mydl", "__init__.py")
     init_py = open(init_py_path, "r").readlines()
     version_line = [l.strip() for l in init_py if l.startswith("__version__")][0]
     version = version_line.split("=")[-1].strip().strip("'\"")
@@ -38,7 +38,7 @@ def get_version():
 
 def get_extensions():
     this_dir = path.dirname(path.abspath(__file__))
-    extensions_dir = path.join(this_dir, "detectron2", "layers", "csrc")
+    extensions_dir = path.join(this_dir, "mydl", "layers", "csrc")
 
     main_source = path.join(extensions_dir, "vision.cpp")
     sources = glob.glob(path.join(extensions_dir, "**", "*.cpp"))
@@ -72,7 +72,7 @@ def get_extensions():
 
     ext_modules = [
         extension(
-            "detectron2._C",
+            "mydl._C",
             sources,
             include_dirs=include_dirs,
             define_macros=define_macros,
@@ -86,13 +86,13 @@ def get_extensions():
 def get_model_zoo_configs() -> List[str]:
     """
     Return a list of configs to include in package for model zoo. Copy over these configs inside
-    detectron2/model_zoo.
+    mydl/model_zoo.
     """
 
     # Use absolute paths while symlinking.
     source_configs_dir = path.join(path.dirname(path.realpath(__file__)), "configs")
     destination = path.join(
-        path.dirname(path.realpath(__file__)), "detectron2", "model_zoo", "configs"
+        path.dirname(path.realpath(__file__)), "mydl", "model_zoo", "configs"
     )
     # Symlink the config directory inside package to have a cleaner pip install.
     if path.exists(destination):
@@ -113,14 +113,14 @@ def get_model_zoo_configs() -> List[str]:
 
 
 setup(
-    name="detectron2",
+    name="mydl",
     version=get_version(),
     author="FAIR",
-    url="https://github.com/facebookresearch/detectron2",
+    url="https://github.com/facebookresearch/mydl",
     description="Detectron2 is FAIR's next-generation research "
     "platform for object detection and segmentation.",
     packages=find_packages(exclude=("configs", "tests")),
-    package_data={"detectron2.model_zoo": get_model_zoo_configs()},
+    package_data={"mydl.model_zoo": get_model_zoo_configs()},
     python_requires=">=3.6",
     install_requires=[
         "termcolor>=1.1",

@@ -8,13 +8,13 @@ logic more clearly.
 One such example is provided in [tools/plain_train_net.py](../../tools/plain_train_net.py).
 
 We also provide a standarized "trainer" abstraction with a
-[minimal hook system](../modules/engine.html#detectron2.engine.HookBase)
+[minimal hook system](../modules/engine.html#mydl.engine.HookBase)
 that helps simplify the standard types of training.
 
 You can use
-[SimpleTrainer().train()](../modules/engine.html#detectron2.engine.SimpleTrainer)
+[SimpleTrainer().train()](../modules/engine.html#mydl.engine.SimpleTrainer)
 which does single-cost single-optimizer single-data-source training.
-Or use [DefaultTrainer().train()](../modules/engine.html#detectron2.engine.defaults.DefaultTrainer)
+Or use [DefaultTrainer().train()](../modules/engine.html#mydl.engine.defaults.DefaultTrainer)
 which includes more standard behavior that one might want to opt in.
 This also means that it's less likely to support some non-standard behavior
 you might want during research.
@@ -22,10 +22,10 @@ you might want during research.
 
 ### Logging of Metrics
 
-During training, metrics are logged with a centralized [EventStorage](../modules/utils.html#detectron2.utils.events.EventStorage).
+During training, metrics are logged with a centralized [EventStorage](../modules/utils.html#mydl.utils.events.EventStorage).
 You can use the following code to access it and log metrics to it:
 ```
-from detectron2.utils.events import get_event_storage
+from mydl.utils.events import get_event_storage
 
 # inside the model:
 if self.training:

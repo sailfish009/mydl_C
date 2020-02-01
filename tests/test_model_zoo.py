@@ -2,8 +2,8 @@
 import logging
 import unittest
 
-from detectron2 import model_zoo
-from detectron2.modeling import FPN, GeneralizedRCNN
+from mydl import model_zoo
+from mydl.modeling import FPN, GeneralizedRCNN
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +21,7 @@ class TestModelZoo(unittest.TestCase):
         url = model_zoo.get_checkpoint_url("Misc/scratch_mask_rcnn_R_50_FPN_3x_gn.yaml")
         self.assertEqual(
             url,
-            "https://dl.fbaipublicfiles.com/detectron2/Misc/scratch_mask_rcnn_R_50_FPN_3x_gn/138602908/model_final_01ca85.pkl",  # noqa
+            "https://dl.fbaipublicfiles.com/mydl/Misc/scratch_mask_rcnn_R_50_FPN_3x_gn/138602908/model_final_01ca85.pkl",  # noqa
         )
 
 

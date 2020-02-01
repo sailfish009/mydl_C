@@ -1,25 +1,25 @@
-detectron2.engine package
+mydl.engine package
 =========================
 
 
-.. automodule:: detectron2.engine
+.. automodule:: mydl.engine
     :members:
     :undoc-members:
     :show-inheritance:
 
 
-detectron2.engine.defaults module
+mydl.engine.defaults module
 ---------------------------------
 
-.. automodule:: detectron2.engine.defaults
+.. automodule:: mydl.engine.defaults
     :members:
     :undoc-members:
     :show-inheritance:
 
-detectron2.engine.hooks module
+mydl.engine.hooks module
 ---------------------------------
 
-.. automodule:: detectron2.engine.hooks
+.. automodule:: mydl.engine.hooks
     :members:
     :undoc-members:
     :show-inheritance:

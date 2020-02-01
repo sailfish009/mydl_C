@@ -1,7 +1,7 @@
-detectron2.layers package
+mydl.layers package
 =========================
 
-.. automodule:: detectron2.layers
+.. automodule:: mydl.layers
     :members:
     :undoc-members:
     :show-inheritance:

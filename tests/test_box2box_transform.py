@@ -3,7 +3,7 @@ import logging
 import unittest
 import torch
 
-from detectron2.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
+from mydl.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
 
 logger = logging.getLogger(__name__)
 

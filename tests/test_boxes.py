@@ -5,7 +5,7 @@ import numpy as np
 import unittest
 import torch
 
-from detectron2.structures import Boxes, BoxMode, pairwise_iou
+from mydl.structures import Boxes, BoxMode, pairwise_iou
 
 
 class TestBoxMode(unittest.TestCase):

@@ -4,11 +4,11 @@
 import unittest
 import torch
 
-import detectron2.model_zoo as model_zoo
-from detectron2.config import get_cfg
-from detectron2.modeling import build_model
-from detectron2.structures import BitMasks, Boxes, Instances
-from detectron2.utils.events import EventStorage
+import mydl.model_zoo as model_zoo
+from mydl.config import get_cfg
+from mydl.modeling import build_model
+from mydl.structures import BitMasks, Boxes, Instances
+from mydl.utils.events import EventStorage
 
 
 def get_model_zoo(config_path):

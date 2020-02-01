@@ -1,6 +1,6 @@
 ---
 name: "\U0001F680Feature Request"
-about: Submit a proposal/request for a new detectron2 feature
+about: Submit a proposal/request for a new mydl feature
 
 ---
 
@@ -23,8 +23,8 @@ we only consider papers that have enough significance and prevalance.
 We don't take feature requests for most projects in the `projects/` directory,
 because they are research code release that is mainly for other researchers to reproduce results.
 
-Instead of adding features inside detectron2,
-you can implement many features by [extending detectron2](https://detectron2.readthedocs.io/tutorials/extend.html).
-The [projects/](https://github.com/facebookresearch/detectron2/tree/master/projects/) directory
+Instead of adding features inside mydl,
+you can implement many features by [extending mydl](https://mydl.readthedocs.io/tutorials/extend.html).
+The [projects/](https://github.com/facebookresearch/mydl/tree/master/projects/) directory
 contains many of such examples.
 

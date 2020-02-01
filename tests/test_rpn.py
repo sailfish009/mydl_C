@@ -3,11 +3,11 @@ import logging
 import unittest
 import torch
 
-from detectron2.config import get_cfg
-from detectron2.modeling.backbone import build_backbone
-from detectron2.modeling.proposal_generator.build import build_proposal_generator
-from detectron2.structures import Boxes, ImageList, Instances, RotatedBoxes
-from detectron2.utils.events import EventStorage
+from mydl.config import get_cfg
+from mydl.modeling.backbone import build_backbone
+from mydl.modeling.proposal_generator.build import build_proposal_generator
+from mydl.structures import Boxes, ImageList, Instances, RotatedBoxes
+from mydl.utils.events import EventStorage
 
 logger = logging.getLogger(__name__)
 

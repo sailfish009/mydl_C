@@ -2,20 +2,20 @@
 """
 DensePose Training Script.
 
-This script is similar to the training script in detectron2/tools.
+This script is similar to the training script in mydl/tools.
 
-It is an example of how a user might use detectron2 for a new project.
+It is an example of how a user might use mydl for a new project.
 """
 
 import os
 
-import detectron2.utils.comm as comm
-from detectron2.checkpoint import DetectionCheckpointer
-from detectron2.config import get_cfg
-from detectron2.data import build_detection_test_loader, build_detection_train_loader
-from detectron2.engine import DefaultTrainer, default_argument_parser, default_setup, launch
-from detectron2.evaluation import COCOEvaluator, DatasetEvaluators, verify_results
-from detectron2.utils.logger import setup_logger
+import mydl.utils.comm as comm
+from mydl.checkpoint import DetectionCheckpointer
+from mydl.config import get_cfg
+from mydl.data import build_detection_test_loader, build_detection_train_loader
+from mydl.engine import DefaultTrainer, default_argument_parser, default_setup, launch
+from mydl.evaluation import COCOEvaluator, DatasetEvaluators, verify_results
+from mydl.utils.logger import setup_logger
 
 from densepose import DatasetMapper, DensePoseCOCOEvaluator, add_densepose_config
 

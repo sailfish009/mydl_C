@@ -1,9 +1,9 @@
 # Use Custom Datasets
 
-If you want to use a custom dataset while also reusing detectron2's data loaders,
+If you want to use a custom dataset while also reusing mydl's data loaders,
 you will need to
 
-1. Register your dataset (i.e., tell detectron2 how to obtain your dataset).
+1. Register your dataset (i.e., tell mydl how to obtain your dataset).
 2. Optionally, register metadata for your dataset.
 
 Next, we explain the above two concepts in details.
@@ -14,21 +14,21 @@ has a working example of how to register and train on a dataset of custom format
 
 ### Register a Dataset
 
-To let detectron2 know how to obtain a dataset named "my_dataset", you will implement
-a function that returns the items in your dataset and then tell detectron2 about this
+To let mydl know how to obtain a dataset named "my_dataset", you will implement
+a function that returns the items in your dataset and then tell mydl about this
 function:
 ```python
 def get_dicts():
   ...
   return list[dict] in the following format
 
-from detectron2.data import DatasetCatalog
+from mydl.data import DatasetCatalog
 DatasetCatalog.register("my_dataset", get_dicts)
 ```
 
 Here, the snippet associates a dataset "my_dataset" with a function that returns the data.
 If you do not modify downstream code (i.e., you use the standard data loader and data mapper),
-then the function has to return a list of dicts in detectron2's standard dataset format, described
+then the function has to return a list of dicts in mydl's standard dataset format, described
 next. You can also use arbitrary custom data format, as long as the
 downstream code (mainly the [custom data loader](data_loading.html)) supports it.
 
@@ -55,7 +55,7 @@ will load the image from "file_name" and load "sem_seg" from "sem_seg_file_name"
   + `bbox` (list[float]): list of 4 numbers representing the bounding box of the instance.
   + `bbox_mode` (int): the format of bbox.
     It must be a member of
-    [structures.BoxMode](../modules/structures.html#detectron2.structures.BoxMode).
+    [structures.BoxMode](../modules/structures.html#mydl.structures.BoxMode).
     Currently supports: `BoxMode.XYXY_ABS`, `BoxMode.XYWH_ABS`.
   + `category_id` (int): an integer in the range [0, num_categories) representing the category label.
     The value num_categories is reserved to represent the "background" category, if applicable.
@@ -73,7 +73,7 @@ will load the image from "file_name" and load "sem_seg" from "sem_seg_file_name"
     depend on whether "bbox_mode" is relative.
 
     Note that the coordinate annotations in COCO format are integers in range [0, H-1 or W-1].
-    By default, detectron2 adds 0.5 to absolute keypoint coordinates to convert them from discrete
+    By default, mydl adds 0.5 to absolute keypoint coordinates to convert them from discrete
     pixel indices to floating point coordinates.
   + `iscrowd`: 0 or 1. Whether this instance is labeled as COCO's "crowd
     region". Don't include this field if you don't know what it means.
@@ -82,19 +82,19 @@ will load the image from "file_name" and load "sem_seg" from "sem_seg_file_name"
   logits of proposals in 'proposal_boxes'.
 + `proposal_bbox_mode` (int): the format of the precomputed proposal bbox.
   It must be a member of
-  [structures.BoxMode](../modules/structures.html#detectron2.structures.BoxMode).
+  [structures.BoxMode](../modules/structures.html#mydl.structures.BoxMode).
   Default format is `BoxMode.XYXY_ABS`.
 
 
 If your dataset is already in the COCO format, you can simply register it by
 ```python
-from detectron2.data.datasets import register_coco_instances
+from mydl.data.datasets import register_coco_instances
 register_coco_instances("my_dataset", {}, "json_annotation.json", "path/to/image/dir")
 ```
 which will take care of everything (including metadata) for you.
 
 If your dataset is in COCO format with custom per-instance annotations,
-the [load_coco_json](../modules/data.html#detectron2.data.datasets.load_coco_json) function can be used.
+the [load_coco_json](../modules/data.html#mydl.data.datasets.load_coco_json) function can be used.
 
 
 ### "Metadata" for Datasets
@@ -113,11 +113,11 @@ you may also want to add its corresponding metadata through
 You can do it like this (using the metadata field "thing_classes" as an example):
 
 ```python
-from detectron2.data import MetadataCatalog
+from mydl.data import MetadataCatalog
 MetadataCatalog.get("my_dataset").thing_classes = ["person", "dog"]
 ```
 
-Here is a list of metadata keys that are used by builtin features in detectron2.
+Here is a list of metadata keys that are used by builtin features in mydl.
 If you add your own dataset without these metadata, some features may be
 unavailable to you:
 
@@ -157,12 +157,12 @@ Some additional metadata that are specific to the evaluation of certain datasets
 * `panoptic_root`, `panoptic_json`: Used by panoptic evaluation.
 * `evaluator_type`: Used by the builtin main training script to select
    evaluator. No need to use it if you write your own main script.
-   You can just provide the [DatasetEvaluator](../modules/evaluation.html#detectron2.evaluation.DatasetEvaluator)
+   You can just provide the [DatasetEvaluator](../modules/evaluation.html#mydl.evaluation.DatasetEvaluator)
    for your dataset directly in your main script.
 
 NOTE: For background on the concept of "thing" and "stuff", see
 [On Seeing Stuff: The Perception of Materials by Humans and Machines](http://persci.mit.edu/pub_pdfs/adelson_spie_01.pdf).
-In detectron2, the term "thing" is used for instance-level tasks,
+In mydl, the term "thing" is used for instance-level tasks,
 and "stuff" is used for semantic segmentation tasks.
 Both are used in panoptic segmentation.
 
@@ -181,4 +181,4 @@ There are other configs you might want to change to train or evaluate on new dat
 * `MODEL.SEM_SEG_HEAD.NUM_CLASSES` sets the number of stuff classes for Semantic FPN & Panoptic FPN.
 * If you're training Fast R-CNN (with precomputed proposals), `DATASETS.PROPOSAL_FILES_{TRAIN,TEST}`
 	need to match the datasts. The format of proposal files are documented
-	[here](../modules/data.html#detectron2.data.load_proposals_into_dataset).
+	[here](../modules/data.html#mydl.data.load_proposals_into_dataset).

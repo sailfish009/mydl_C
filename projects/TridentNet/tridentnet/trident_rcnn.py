@@ -1,8 +1,8 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-from detectron2.layers import batched_nms
-from detectron2.modeling import ROI_HEADS_REGISTRY, StandardROIHeads
-from detectron2.modeling.roi_heads.roi_heads import Res5ROIHeads
-from detectron2.structures import Instances
+from mydl.layers import batched_nms
+from mydl.modeling import ROI_HEADS_REGISTRY, StandardROIHeads
+from mydl.modeling.roi_heads.roi_heads import Res5ROIHeads
+from mydl.structures import Instances
 
 
 def merge_branch_instances(instances, num_branch, nms_thrsh, topk_per_image):

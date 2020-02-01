@@ -5,10 +5,10 @@ import logging
 import numpy as np
 import unittest
 
-from detectron2.config import get_cfg
-from detectron2.data import detection_utils
-from detectron2.data import transforms as T
-from detectron2.utils.logger import setup_logger
+from mydl.config import get_cfg
+from mydl.data import detection_utils
+from mydl.data import transforms as T
+from mydl.utils.logger import setup_logger
 
 logger = logging.getLogger(__name__)
 

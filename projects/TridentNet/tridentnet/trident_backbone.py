@@ -3,9 +3,9 @@ import fvcore.nn.weight_init as weight_init
 import torch
 import torch.nn.functional as F
 
-from detectron2.layers import Conv2d, FrozenBatchNorm2d, get_norm
-from detectron2.modeling import BACKBONE_REGISTRY, ResNet, ResNetBlockBase, make_stage
-from detectron2.modeling.backbone.resnet import BasicStem, BottleneckBlock, DeformBottleneckBlock
+from mydl.layers import Conv2d, FrozenBatchNorm2d, get_norm
+from mydl.modeling import BACKBONE_REGISTRY, ResNet, ResNetBlockBase, make_stage
+from mydl.modeling.backbone.resnet import BasicStem, BottleneckBlock, DeformBottleneckBlock
 
 from .trident_conv import TridentConv
 

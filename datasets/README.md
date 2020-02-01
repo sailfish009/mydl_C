@@ -1,5 +1,5 @@
 
-For a few datasets that detectron2 natively supports,
+For a few datasets that mydl natively supports,
 the datasets are assumed to exist in a directory called
 "datasets/", under the directory where you launch the program.
 They need to have the following directory structure:

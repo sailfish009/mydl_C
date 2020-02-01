@@ -5,7 +5,7 @@
 
 cd "${0%/*}"
 
-BASE=https://dl.fbaipublicfiles.com/detectron2
+BASE=https://dl.fbaipublicfiles.com/mydl
 mkdir -p coco/annotations
 
 for anno in instances_val2017_100 \

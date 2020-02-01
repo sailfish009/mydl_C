@@ -72,7 +72,7 @@ about pixels, coordinates, and "+1"s.
 As mentioned above, despite the incompatibilities with Detectron, the relevant
 ops have been implemented in Caffe2, in [PR1](https://github.com/pytorch/pytorch/pull/20550)
 and [PR2](https://github.com/pytorch/pytorch/pull/23706).
-Therefore, models trained with detectron2 can be used in Caffe2.
+Therefore, models trained with mydl can be used in Caffe2.
 
 A conversion script will be available later, for easier deployment.
 
