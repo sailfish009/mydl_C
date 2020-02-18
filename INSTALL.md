@@ -6,19 +6,17 @@ The [Dockerfile](https://github.com/facebookresearch/mydl/blob/master/docker/Doc
 also installs mydl with a few simple commands.
 
 ### Requirements
-- Linux or macOS
-- Python ≥ 3.6
+- Linux or macOS with Python ≥ 3.6
 - PyTorch ≥ 1.3
 - [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation.
 	You can install them together at [pytorch.org](https://pytorch.org) to make sure of this.
 - OpenCV, optional, needed by demo and visualization
 - pycocotools: `pip install cython; pip install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`
-- gcc & g++ ≥ 4.9
 
 
-### Build and Install Detectron2
+### Build Detectron2 from Source
 
-After having the above dependencies, run:
+After having the above dependencies and gcc & g++ ≥ 4.9, run:
 ```
 pip install 'git+https://github.com/facebookresearch/mydl.git'
 # (add --user if you don't have permission)
@@ -34,7 +32,19 @@ cd mydl && pip install -e .
 To __rebuild__ mydl that's built from a local clone, `rm -rf build/ **/*.so` then `pip install -e .`.
 You often need to rebuild mydl after reinstalling PyTorch.
 
+### Install Pre-Built Detectron2
+```
+# for CUDA 10.1:
+pip install mydl -f https://dl.fbaipublicfiles.com/mydl/wheels/cu101/index.html
+```
+You can replace cu101 with "cu{100,92}" or "cpu".
+
+Note that such installation has to be used with the latest official PyTorch release (currently 1.4).
+It will not work with your custom build of PyTorch.
+
 ### Common Installation Issues
+
+If you met issues using the pre-built mydl, please uninstall it and try building it from source.
 
 Click each issue for its solutions:
 
@@ -42,6 +52,7 @@ Click each issue for its solutions:
 <summary>
 Undefined torch/aten/caffe2 symbols, or segmentation fault immediately when running the library.
 </summary>
+<br/>
 
 This can happen if mydl or torchvision is not
 compiled with the version of PyTorch you're running.
@@ -59,6 +70,7 @@ in your issue.
 <summary>
 Undefined C++ symbols in `mydl/_C*.so`.
 </summary>
+<br/>
 Usually it's because the library is compiled with a newer C++ compiler but run with an old C++ run time.
 This can happen with old anaconda.
 
@@ -69,6 +81,7 @@ Try `conda update libgcc`. Then rebuild mydl.
 <summary>
 "Not compiled with GPU support" or "Detectron2 CUDA Compiler: not available".
 </summary>
+<br/>
 CUDA is not found when building mydl.
 You should make sure
 
@@ -83,7 +96,7 @@ print valid outputs at the time you build mydl.
 <summary>
 "invalid device function" or "no kernel image is available for execution".
 </summary>
-
+<br/>
 Two possibilities:
 
 * You build mydl with one version of CUDA but run it with a different version.
@@ -116,7 +129,7 @@ Two possibilities:
 <summary>
 Undefined CUDA symbols or cannot open libcudart.so.
 </summary>
-
+<br/>
 The version of NVCC you use to build mydl or torchvision does
 not match the version of CUDA you are running with.
 This often happens when using anaconda's CUDA runtime.
@@ -135,5 +148,15 @@ to match your local CUDA installation, or install a different version of CUDA to
 <summary>
 "ImportError: cannot import name '_C'".
 </summary>
+<br/>
 Please build and install mydl following the instructions above.
+</details>
+
+<details>
+<summary>
+ONNX conversion segfault after some "TraceWarning".
+</summary>
+<br/>
+Build and install ONNX from its source code using a compiler
+whose version is closer to what's used by PyTorch (available in `torch.__config__.show()`).
 </details>
