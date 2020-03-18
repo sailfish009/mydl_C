@@ -467,10 +467,10 @@ class Visualizer:
 
     def draw_dataset_dict(self, dic):
         """
-        Draw annotations/segmentaions in Detectron2 Dataset format.
+        Draw annotations/segmentaions in mydl Dataset format.
 
         Args:
-            dic (dict): annotation/segmentation data of one image, in Detectron2 Dataset format.
+            dic (dict): annotation/segmentation data of one image, in mydl Dataset format.
 
         Returns:
             output (VisImage): image object with visualizations.

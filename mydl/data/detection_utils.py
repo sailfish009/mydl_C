@@ -202,7 +202,7 @@ def transform_keypoint_annotations(keypoints, transforms, image_size, keypoint_h
     Transform keypoint annotations of an image.
 
     Args:
-        keypoints (list[float]): Nx3 float in Detectron2 Dataset format.
+        keypoints (list[float]): Nx3 float in mydl Dataset format.
         transforms (TransformList):
         image_size (tuple): the height, width of the transformed image
         keypoint_hflip_indices (ndarray[int]): see `create_keypoint_hflip_indices`.
@@ -384,7 +384,7 @@ def gen_crop_transform_with_instance(crop_size, image_size, instance):
     Args:
         crop_size (tuple): h, w in pixels
         image_size (tuple): h, w
-        instance (dict): an annotation dict of one instance, in Detectron2's
+        instance (dict): an annotation dict of one instance, in mydl's
             dataset format.
     """
     crop_size = np.asarray(crop_size, dtype=np.int32)

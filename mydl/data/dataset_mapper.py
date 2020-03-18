@@ -18,7 +18,7 @@ __all__ = ["DatasetMapper"]
 
 class DatasetMapper:
     """
-    A callable which takes a dataset dict in Detectron2 Dataset format,
+    A callable which takes a dataset dict in mydl Dataset format,
     and map it into a format used by the model.
 
     This is the default callable to be used to map your dataset dict into training data.
@@ -67,7 +67,7 @@ class DatasetMapper:
     def __call__(self, dataset_dict):
         """
         Args:
-            dataset_dict (dict): Metadata of one image, in Detectron2 Dataset format.
+            dataset_dict (dict): Metadata of one image, in mydl Dataset format.
 
         Returns:
             dict: a format that builtin models in mydl accept

@@ -69,7 +69,7 @@ class RepeatFactorTrainingSampler(Sampler):
     def __init__(self, dataset_dicts, repeat_thresh, shuffle=True, seed=None):
         """
         Args:
-            dataset_dicts (list[dict]): annotations in Detectron2 dataset format.
+            dataset_dicts (list[dict]): annotations in mydl dataset format.
             repeat_thresh (float): frequency threshold below which data is repeated.
             shuffle (bool): whether to shuffle the indices or not
             seed (int): the initial seed of the shuffle. Must be the same

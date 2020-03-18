@@ -18,7 +18,7 @@ class DatasetCatalog(object):
     to a function which parses the dataset and returns the samples in the
     format of `list[dict]`.
 
-    The returned dicts should be in Detectron2 Dataset format (See DATASETS.md for details)
+    The returned dicts should be in mydl Dataset format (See DATASETS.md for details)
     if used with the data loader functionalities in `data/build.py,data/detection_transform.py`.
 
     The purpose of having this catalog is to make it easy to choose

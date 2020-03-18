@@ -16,7 +16,7 @@ from mydl.structures import Boxes, BoxMode, PolygonMasks
 from .. import DatasetCatalog, MetadataCatalog
 
 """
-This file contains functions to parse COCO-format annotations into dicts in "Detectron2 format".
+This file contains functions to parse COCO-format annotations into dicts in "mydl format".
 """
 
 
@@ -43,7 +43,7 @@ def load_coco_json(json_file, image_root, dataset_name=None, extra_annotation_ke
             For example, the densepose annotations are loaded in this way.
 
     Returns:
-        list[dict]: a list of dicts in Detectron2 standard dataset dicts format. (See
+        list[dict]: a list of dicts in mydl standard dataset dicts format. (See
         `Using Custom Datasets </tutorials/datasets.html>`_ )
 
     Notes:
@@ -385,7 +385,7 @@ def convert_to_coco_dict(dataset_name):
 
     info = {
         "date_created": str(datetime.datetime.now()),
-        "description": "Automatically generated COCO json file for Detectron2.",
+        "description": "Automatically generated COCO json file for mydl.",
     }
     coco_dict = {
         "info": info,

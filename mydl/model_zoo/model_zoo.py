@@ -10,7 +10,7 @@ from mydl.modeling import build_model
 
 class _ModelZooUrls(object):
     """
-    Mapping from names to officially released Detectron2 pre-trained models.
+    Mapping from names to officially released mydl pre-trained models.
     """
 
     S3_PREFIX = "https://dl.fbaipublicfiles.com/mydl/"
@@ -119,7 +119,7 @@ def get_config_file(config_path):
 
 def get(config_path, trained: bool = False):
     """
-    Get a model specified by relative path under Detectron2's official ``configs/`` directory.
+    Get a model specified by relative path under mydl's official ``configs/`` directory.
 
     Args:
         config_path (str): config file name relative to mydl's "configs/"

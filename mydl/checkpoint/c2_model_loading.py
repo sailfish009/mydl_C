@@ -67,7 +67,7 @@ def convert_basic_c2_names(original_keys):
 
 def convert_c2_detectron_names(weights):
     """
-    Map Caffe2 Detectron weight names to Detectron2 names.
+    Map Caffe2 Detectron weight names to mydl names.
 
     Args:
         weights (dict): name -> tensor

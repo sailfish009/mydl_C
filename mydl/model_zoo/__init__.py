@@ -1,6 +1,6 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 """
-Model Zoo API for Detectron2: a collection of functions to create common model architectures and
+Model Zoo API for mydl: a collection of functions to create common model architectures and
 optionally load pre-trained weights as released in
 `MODEL_ZOO.md <https://github.com/facebookresearch/mydl/blob/master/MODEL_ZOO.md>`_.
 """

@@ -42,7 +42,7 @@ def filter_images_with_only_crowd_annotations(dataset_dicts):
     A common training-time preprocessing on COCO dataset.
 
     Args:
-        dataset_dicts (list[dict]): annotations in Detectron2 Dataset format.
+        dataset_dicts (list[dict]): annotations in mydl Dataset format.
 
     Returns:
         list[dict]: the same format, but filtered.
@@ -71,7 +71,7 @@ def filter_images_with_few_keypoints(dataset_dicts, min_keypoints_per_image):
     Filter out images with too few number of keypoints.
 
     Args:
-        dataset_dicts (list[dict]): annotations in Detectron2 Dataset format.
+        dataset_dicts (list[dict]): annotations in mydl Dataset format.
 
     Returns:
         list[dict]: the same format as dataset_dicts, but filtered.
@@ -113,7 +113,7 @@ def load_proposals_into_dataset(dataset_dicts, proposal_file):
     - "bbox_mode": the BoxMode of the boxes array. Defaults to ``BoxMode.XYXY_ABS``.
 
     Args:
-        dataset_dicts (list[dict]): annotations in Detectron2 Dataset format.
+        dataset_dicts (list[dict]): annotations in mydl Dataset format.
         proposal_file (str): file path of pre-computed proposals, in pkl format.
 
     Returns:

@@ -109,9 +109,9 @@ class ModelCatalogHandler(PathHandler):
         return PathManager.open(self._get_local_path(path), mode, **kwargs)
 
 
-class Detectron2Handler(PathHandler):
+class mydlHandler(PathHandler):
     """
-    Resolve anything that's in Detectron2 model zoo.
+    Resolve anything that's in mydl model zoo.
     """
 
     PREFIX = "mydl://"
@@ -129,4 +129,4 @@ class Detectron2Handler(PathHandler):
 
 
 PathManager.register_handler(ModelCatalogHandler())
-PathManager.register_handler(Detectron2Handler())
+PathManager.register_handler(mydlHandler())

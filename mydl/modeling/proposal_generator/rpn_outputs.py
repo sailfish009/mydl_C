@@ -146,7 +146,7 @@ def find_top_rpn_proposals(
         # During testing, it is over the proposals for each image separately.
         # As a result, the training behavior becomes batch-dependent,
         # and the configuration "POST_NMS_TOPK_TRAIN" end up relying on the batch size.
-        # This bug is addressed in Detectron2 to make the behavior independent of batch size.
+        # This bug is addressed in mydl to make the behavior independent of batch size.
         keep = keep[:post_nms_topk]  # keep is already sorted
 
         res = Instances(image_size)
@@ -280,7 +280,7 @@ class RPNOutputs(object):
 
             if self.boundary_threshold >= 0:
                 # Discard anchors that go out of the boundaries of the image
-                # NOTE: This is legacy functionality that is turned off by default in Detectron2
+                # NOTE: This is legacy functionality that is turned off by default in mydl
                 anchors_inside_image = anchors_i.inside_box(image_size_i, self.boundary_threshold)
                 gt_objectness_logits_i[~anchors_inside_image] = -1
 

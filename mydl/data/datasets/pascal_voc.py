@@ -23,7 +23,7 @@ CLASS_NAMES = [
 
 def load_voc_instances(dirname: str, split: str):
     """
-    Load Pascal VOC detection annotations to Detectron2 format.
+    Load Pascal VOC detection annotations to mydl format.
 
     Args:
         dirname: Contain "Annotations", "ImageSets", "JPEGImages"
