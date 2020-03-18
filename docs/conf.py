@@ -86,7 +86,7 @@ import mydl  # isort: skip
 
 
 project = "mydl"
-copyright = "2019, mydl contributors"
+copyright = "2019-2020, mydl contributors"
 author = "mydl contributors"
 
 # The short X.Y version

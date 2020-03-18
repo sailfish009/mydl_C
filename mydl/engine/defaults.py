@@ -12,6 +12,7 @@ since they are meant to represent the "common default behavior" people need in t
 import argparse
 import logging
 import os
+import sys
 from collections import OrderedDict
 import torch
 from fvcore.common.file_io import PathManager
@@ -69,7 +70,7 @@ def default_argument_parser():
     # PyTorch still may leave orphan processes in multi-gpu training.
     # Therefore we use a deterministic way to obtain port,
     # so that users are aware of orphan processes by seeing the port occupied.
-    port = 2 ** 15 + 2 ** 14 + hash(os.getuid()) % 2 ** 14
+    port = 2 ** 15 + 2 ** 14 + hash(os.getuid() if sys.platform != "win32" else 1) % 2 ** 14
     parser.add_argument("--dist-url", default="tcp://127.0.0.1:{}".format(port))
     parser.add_argument(
         "opts",
@@ -118,7 +119,7 @@ def default_setup(cfg, args):
         path = os.path.join(output_dir, "config.yaml")
         with PathManager.open(path, "w") as f:
             f.write(cfg.dump())
-        logger.info("Full config saved to {}".format(os.path.abspath(path)))
+        logger.info("Full config saved to {}".format(path))
 
     # make sure each worker has a different, yet deterministic seed if specified
     seed_all_rng(None if cfg.SEED < 0 else cfg.SEED + rank)
@@ -337,7 +338,7 @@ class DefaultTrainer(SimpleTrainer):
 
         if comm.is_main_process():
             # run writers in the end, so that evaluation metrics are written
-            ret.append(hooks.PeriodicWriter(self.build_writers()))
+            ret.append(hooks.PeriodicWriter(self.build_writers(), period=20))
         return ret
 
     def build_writers(self):
@@ -362,7 +363,7 @@ class DefaultTrainer(SimpleTrainer):
             ]
 
         """
-        # Assume the default print/log frequency.
+        # Here the default print/log frequency of each writer is used.
         return [
             # It may not always print what you want to see, since it prints "common" metrics only.
             CommonMetricPrinter(self.max_iter),
@@ -449,8 +450,11 @@ class DefaultTrainer(SimpleTrainer):
         It is not implemented by default.
         """
         raise NotImplementedError(
-            "Please either implement `build_evaluator()` in subclasses, or pass "
-            "your evaluator as arguments to `DefaultTrainer.test()`."
+            """
+If you want DefaultTrainer to automatically run evaluation,
+please implement `build_evaluator()` in subclasses (see train_net.py for example).
+Alternatively, you can call evaluation functions yourself (see Colab balloon tutorial for example).
+"""
         )
 
     @classmethod

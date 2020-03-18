@@ -53,18 +53,27 @@ mydl.utils.memory module
     :show-inheritance:
 
 
-mydl.utils.video\_visualizer module
------------------------------------------
+mydl.utils.analysis module
+----------------------------------
 
-.. automodule:: mydl.utils.video_visualizer
+.. automodule:: mydl.utils.analysis
     :members:
     :undoc-members:
     :show-inheritance:
+
 
 mydl.utils.visualizer module
 ----------------------------------
 
 .. automodule:: mydl.utils.visualizer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+mydl.utils.video\_visualizer module
+-----------------------------------------
+
+.. automodule:: mydl.utils.video_visualizer
     :members:
     :undoc-members:
     :show-inheritance:

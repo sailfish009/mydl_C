@@ -1,10 +1,12 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+from typing import List
 import fvcore.nn.weight_init as weight_init
 import torch
 from torch import nn
 from torch.nn import functional as F
 
 from mydl.layers import Conv2d, ConvTranspose2d, ShapeSpec, cat, get_norm
+from mydl.structures import Instances
 from mydl.utils.events import get_event_storage
 from mydl.utils.registry import Registry
 
@@ -149,11 +151,11 @@ class BaseMaskRCNNHead(nn.Module):
         super().__init__()
         self.vis_period = cfg.VIS_PERIOD
 
-    def forward(self, x, instances):
+    def forward(self, x, instances: List[Instances]):
         """
         Args:
             x: input region feature(s) provided by :class:`ROIHeads`.
-            instances: contains the boxes & labels corresponding
+            instances (list[Instances]): contains the boxes & labels corresponding
                 to the input features.
                 Exact format is up to its caller to decide.
                 Typically, this is the foreground instances in training, with

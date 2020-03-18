@@ -1,4 +1,6 @@
+#!/usr/bin/env python3
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+
 """
 DensePose Training Script.
 
@@ -11,7 +13,7 @@ import os
 
 import mydl.utils.comm as comm
 from mydl.checkpoint import DetectionCheckpointer
-from mydl.config import get_cfg
+from mydl.config import CfgNode, get_cfg
 from mydl.data import build_detection_test_loader, build_detection_train_loader
 from mydl.engine import DefaultTrainer, default_argument_parser, default_setup, launch
 from mydl.evaluation import COCOEvaluator, DatasetEvaluators, verify_results
@@ -22,7 +24,7 @@ from densepose import DatasetMapper, DensePoseCOCOEvaluator, add_densepose_confi
 
 class Trainer(DefaultTrainer):
     @classmethod
-    def build_evaluator(cls, cfg, dataset_name):
+    def build_evaluator(cls, cfg: CfgNode, dataset_name):
         output_folder = os.path.join(cfg.OUTPUT_DIR, "inference")
         evaluators = [COCOEvaluator(dataset_name, cfg, True, output_folder)]
         if cfg.MODEL.DENSEPOSE_ON:
@@ -30,11 +32,11 @@ class Trainer(DefaultTrainer):
         return DatasetEvaluators(evaluators)
 
     @classmethod
-    def build_test_loader(cls, cfg, dataset_name):
+    def build_test_loader(cls, cfg: CfgNode, dataset_name):
         return build_detection_test_loader(cfg, dataset_name, mapper=DatasetMapper(cfg, False))
 
     @classmethod
-    def build_train_loader(cls, cfg):
+    def build_train_loader(cls, cfg: CfgNode):
         return build_detection_train_loader(cfg, mapper=DatasetMapper(cfg, True))
 
 

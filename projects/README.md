@@ -1,7 +1,9 @@
 
-Here are a few research projects that are built on mydl.
+Here are a few projects that are built on mydl.
 They are examples of how to use mydl as a library, to make your projects more
 maintainable.
+
+## Projects by Facebook
 
 Note that these are research projects, and therefore may not have the same level
 of support or stability of mydl.
@@ -11,3 +13,19 @@ of support or stability of mydl.
 + [TensorMask: A Foundation for Dense Object Segmentation](TensorMask)
 + [Mesh R-CNN](https://github.com/facebookresearch/meshrcnn)
 + [PointRend: Image Segmentation as Rendering](PointRend)
++ Momentum Contrast for Unsupervised Visual Representation Learning (coming soon)
+
+
+## External Projects
+
+External projects in the community that use mydl:
+
+<!--
+ - If you want to contribute, note that:
+ -  1. please add your project to the end of the list and try to use only one line
+ -  2. the project must provide trained models for what it implements
+ -->
+
++ [VoVNet backbones](https://github.com/youngwanLEE/vovnet-mydl).
++ [AdelaiDet](https://github.com/aim-uofa/adet), a detection toolbox from the Universtiy of Adelaide.
++ [CenterMask : Real-Time Anchor-Free Instance Segmentation](https://github.com/youngwanLEE/centermask2)

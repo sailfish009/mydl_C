@@ -11,36 +11,40 @@ also installs mydl with a few simple commands.
 - [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation.
 	You can install them together at [pytorch.org](https://pytorch.org) to make sure of this.
 - OpenCV, optional, needed by demo and visualization
-- pycocotools: `pip install cython; pip install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`
+- pycocotools: `pip install cython; pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`
 
 
 ### Build Detectron2 from Source
 
-After having the above dependencies and gcc & g++ ≥ 4.9, run:
+After having the above dependencies and gcc & g++ ≥ 5, run:
 ```
-pip install 'git+https://github.com/facebookresearch/mydl.git'
+python -m pip install 'git+https://github.com/facebookresearch/mydl.git'
 # (add --user if you don't have permission)
 
 # Or, to install it from a local clone:
 git clone https://github.com/facebookresearch/mydl.git
-cd mydl && pip install -e .
+cd mydl && python -m pip install -e .
 
 # Or if you are on macOS
-# MACOSX_DEPLOYMENT_TARGET=10.9 CC=clang CXX=clang++ pip install -e .
+# CC=clang CXX=clang++ python -m pip install -e .
 ```
 
-To __rebuild__ mydl that's built from a local clone, `rm -rf build/ **/*.so` then `pip install -e .`.
-You often need to rebuild mydl after reinstalling PyTorch.
+To __rebuild__ mydl that's built from a local clone, use `rm -rf build/ **/*.so` to clean the
+old build first. You often need to rebuild mydl after reinstalling PyTorch.
 
 ### Install Pre-Built Detectron2
 ```
 # for CUDA 10.1:
-pip install mydl -f https://dl.fbaipublicfiles.com/mydl/wheels/cu101/index.html
+python -m pip install mydl -f https://dl.fbaipublicfiles.com/mydl/wheels/cu101/index.html
 ```
 You can replace cu101 with "cu{100,92}" or "cpu".
 
-Note that such installation has to be used with the latest official PyTorch release (currently 1.4).
-It will not work with your custom build of PyTorch.
+Note that:
+1. Such installation has to be used with the latest official PyTorch release (currently 1.4).
+   It will not work with your custom build of PyTorch.
+2. Such installation is out-of-date w.r.t. master branch of mydl. It may not be
+	 compatible with the master branch of a research project that uses mydl (e.g. those in
+	 [projects](./projects) or [meshrcnn](https://github.com/facebookresearch/meshrcnn/)).
 
 ### Common Installation Issues
 
@@ -90,6 +94,8 @@ python -c 'import torch; from torch.utils.cpp_extension import CUDA_HOME; print(
 ```
 
 print valid outputs at the time you build mydl.
+
+Most models can run inference (but not training) without GPU support. To use CPUs, set `MODEL.DEVICE='cpu'` in the config.
 </details>
 
 <details>
@@ -150,6 +156,9 @@ to match your local CUDA installation, or install a different version of CUDA to
 </summary>
 <br/>
 Please build and install mydl following the instructions above.
+
+If you are running code from mydl's root directory, `cd` to a different one.
+Otherwise you may not import the code that you installed.
 </details>
 
 <details>

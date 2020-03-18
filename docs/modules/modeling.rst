@@ -7,7 +7,7 @@ mydl.modeling package
     :show-inheritance:
 
 
-mydl.modeilng.poolers module
+mydl.modeling.poolers module
 ---------------------------------------
 
 .. automodule:: mydl.modeling.poolers
@@ -16,7 +16,7 @@ mydl.modeilng.poolers module
     :show-inheritance:
 
 
-mydl.modeilng.sampling module
+mydl.modeling.sampling module
 ------------------------------------
 
 .. automodule:: mydl.modeling.sampling
@@ -25,7 +25,7 @@ mydl.modeilng.sampling module
     :show-inheritance:
 
 
-mydl.modeilng.box_regression module
+mydl.modeling.box_regression module
 ------------------------------------------
 
 .. automodule:: mydl.modeling.box_regression

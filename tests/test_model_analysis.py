@@ -7,7 +7,7 @@ import torch
 import mydl.model_zoo as model_zoo
 from mydl.config import get_cfg
 from mydl.modeling import build_model
-from mydl.utils.analysis import flop_count_operators
+from mydl.utils.analysis import flop_count_operators, parameter_count
 
 
 def get_model_zoo(config_path):
@@ -22,7 +22,7 @@ def get_model_zoo(config_path):
     return build_model(cfg)
 
 
-class RetinaNetFlopTest(unittest.TestCase):
+class RetinaNetTest(unittest.TestCase):
     def setUp(self):
         self.model = get_model_zoo("COCO-Detection/retinanet_R_50_FPN_1x.yaml")
 
@@ -32,8 +32,13 @@ class RetinaNetFlopTest(unittest.TestCase):
         res = flop_count_operators(self.model, inputs)
         self.assertTrue(int(res["conv"]), 146)  # 146B flops
 
+    def test_param_count(self):
+        res = parameter_count(self.model)
+        self.assertTrue(res[""], 37915572)
+        self.assertTrue(res["backbone"], 31452352)
 
-class FasterRCNNFlopTest(unittest.TestCase):
+
+class FasterRCNNTest(unittest.TestCase):
     def setUp(self):
         self.model = get_model_zoo("COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml")
 
@@ -46,3 +51,8 @@ class FasterRCNNFlopTest(unittest.TestCase):
         # Flops for box head is not conv, and depends on #proposals, which is
         # almost 0 for random inputs.
         self.assertTrue(int(res["conv"]), 117)
+
+    def test_param_count(self):
+        res = parameter_count(self.model)
+        self.assertTrue(res[""], 41699936)
+        self.assertTrue(res["backbone"], 26799296)
