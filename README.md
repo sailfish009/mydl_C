@@ -54,3 +54,7 @@ If you use Detectron2 in your research or wish to refer to the baseline results 
   year =         {2019}
 }
 ```
+
+## Note
+
+    grep -rl 'detectron2' ./ | xargs sed -i 's/detectron2/mydl/g'
